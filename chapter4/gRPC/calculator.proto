@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package calculator;
+
+// Wrappers.proto 파일 임포트
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/empty.proto";
+
+enum Operation {
+  ADD = 0;
+  SUBTRACT = 1;
+  MULTIPLY = 2;
+  DIVIDE = 3;
+}
+
+message Work {
+  int32 num1 = 1;
+  int32 num2 = 2;
+  Operation op = 3;
+}
+
+service Calculator {
+  rpc Ping (google.protobuf.Empty) returns (google.protobuf.Empty);
+  
+  // int32를 반환하는 대신 Int32Value 메시지로 래핑합니다.
+  rpc Calculate (Work) returns (google.protobuf.Int32Value);
+}
