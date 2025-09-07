@@ -54,7 +54,7 @@ def run_client():
         print(f"100 / 0 = {div_by_zero_result} (서버에서 0을 반환)")
         '''
         start_time = time.time()
-        for i in range(1000000):
+        for i in range(10000):
             work_square = Work(num1=33, num2=0, op=Operation.SQUARE)
             square_result = client.calculate(work_square)
         end_time = time.time()

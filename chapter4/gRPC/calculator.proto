@@ -1,6 +1,8 @@
 syntax = "proto3";
 
 package calculator;
+option py_package = "calculator_proto";
+option py_generic_services = true;
 
 // Wrappers.proto 파일 임포트
 import "google/protobuf/wrappers.proto";
