@@ -1,0 +1,2 @@
+memory = {}
+file = 'data.txt'
